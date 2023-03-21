@@ -1,0 +1,26 @@
+#In this SQL, I'm querying a database with multiple tables in it to quantify statistics about ice cream and order date.
+
+CREATE TABLE ice_cream (id INTEGER PRIMARY KEY, flavor TEXT, price INTEGER, scoops INTEGER, toppings TEXT, brand TEXT);
+
+INSERT INTO ice_cream VALUES(1, "vanilla", 2, 2,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(2, "chocolate",2,1,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(3,"sherbert",2,3, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(4,"rocky road",3,1, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(5,"butter pecan",3,1,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(6,"mint chocolate chip",3,2, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(7,"strawberry",2,2, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(8,"cherry",2,1, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(9,"pistachio",3,2,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(10,"coffee",2,1,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(11,"banana",2,2, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(12,"eggnog",3,1,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(13,"pineapple",3,2,"sprinkles", "blue bell");
+INSERT INTO ice_cream VALUES(14,"cotton candy",3,1, "fudge", "breyers");
+INSERT INTO ice_cream VALUES(15,"cookie dough",3,2,"sprinkles", "blue bell");
+
+
+SELECT * FROM ice_cream ORDER BY price;
+
+SELECT SUM(scoops) FROM ice_cream;
+
+SELECT * FROM ice_cream ORDER BY scoops;
