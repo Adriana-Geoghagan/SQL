@@ -1,0 +1,37 @@
+/* Create table about singers */
+
+CREATE table Singers
+(id INTEGER PRIMARY KEY,
+name TEXT,
+age INTEGER,
+residency TEXT);
+
+INSERT into Singers (name, age, residency) VALUES ("Ariana Grande",29, "Los Angeles");
+INSERT into Singers (name, age, residency) VALUES ("Harry Styles", 26, "New York");
+INSERT into Singers (name, age, residency) VALUES ("Miley Cyrus", 30, "Tennesse");
+INSERT into Singers (name, age, residency) VALUES ("Taylor Swift",33, "Tennesse");
+
+CREATE table Singers_song
+(id INTEGER PRIMARY KEY,
+singer_id INTEGER,
+song TEXT,
+spotify_streams INTEGER);
+
+INSERT into Singers_song (singer_id, song, spotify_streams) VALUES (1, "positions", 2000000000000);
+INSERT into Singers_song (singer_id, song, spotify_streams) VALUES
+(2, "And it Was", 1500000000000);
+INSERT into Singers_song (singer_id, song, spotify_streams) VALUES (3, "Flowers", 115000000);
+INSERT into Singers_song (singer_id, song, spotify_streams) VALUES
+(4, "Anti-Hero", 17390000);
+
+SELECT singers.name, singers_song.song 
+FROM singers JOIN singers_song on singers_song.singer_id = singers.id;
+
+SELECT singers.name, singers_song.song , singers_song.spotify_streams
+FROM singers JOIN singers_song on singers_song.singer_id = singers.id;
+
+SELECT singers.name, singers.residency  
+FROM singers;
+
+SELECT singers.name, singers.residency  
+FROM singers where singers.residency = "Tennesse";
